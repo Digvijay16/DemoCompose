@@ -4,20 +4,30 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
+import com.djmac.demoandroidkotlin.data.CountryInfo
 import com.djmac.demoandroidkotlin.screens.MainScreen
 import com.djmac.demoandroidkotlin.ui.theme.DemoAndroidKotlinTheme
-import com.djmac.demoandroidkotlin.viewmodels.ViewModelMainActivity
 
 class MainActivity : ComponentActivity() {
+    private val countryInfo = CountryInfo(
+        flagId = R.drawable.`in`,
+        commonName = "Bharat",
+        nationalCapital = "New Delhi",
+        officialName = "Republic Of India",
+        region = "Asia",
+        subRegion = "South Asia",
+        currencySymbol ="₹",
+        currencyName ="Indian Rupee",
+        mobileCode ="+91",
+        tld = ".in"
+    )
 
-    private val viewModel by viewModels<ViewModelMainActivity> ()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             DemoAndroidKotlinTheme {
-             MainScreen(viewModel)
+                MainScreen(countryInfo)
             }
         }
     }
