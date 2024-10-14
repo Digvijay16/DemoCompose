@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.djmac.demoandroidkotlin.R
 import com.djmac.demoandroidkotlin.components.CountryCard
+import com.djmac.demoandroidkotlin.components.CountryCardWithConstraintsLayout
 import com.djmac.demoandroidkotlin.data.CountryInfo
 
 
@@ -17,7 +18,7 @@ fun MainScreen(countryInfo: CountryInfo) {
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.surface
     ) {
-        CountryCard(countryInfo)
+        CountryCardWithConstraintsLayout(countryInfo)
     }
 }
 
@@ -37,5 +38,5 @@ fun PreviewMainScreen() {
         mobileCode = "+91",
         tld = ".in"
     )
-    MainScreen(countryInfo)
+    CountryCardWithConstraintsLayout(countryInfo)
 }
